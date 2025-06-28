@@ -1,115 +1,117 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { SlOptionsVertical } from "react-icons/sl";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col min-h-screen lg:h-screen px-10 lg:px-20 py-14 w-full overflow-hidden justify-center items-center">
+      <div className="absolute -top-[25%] -z-10 -left-[8%] lg:-left-[4%] h-[600px] lg:h-[110%] w-[50%] lg:w-[25%] rounded-full bg-gradient-to-b from-light-magenta to-light-violet"></div>
+      <div className="flex flex-col lg:flex-row w-full h-full items-center max-w-[1000px] gap-y-16">
+        <div className="flex w-full justify-center lg:justify-start lg:w-1/2 ">
+          <div className="flex relative items-center justify-center w-[300px] h-[600px] rounded-2xl shadow-2xl bg-white">
+            <div className="flex absolute top-0 w-[180px] h-[40px] rounded-full bg-white"></div>
+            <div className="flex flex-col w-[270px] h-[570px] rounded-2xl bg-light-grayish-violet overflow-hidden">
+              <div className="flex justify-between items-center pt-8 pb-3 px-2 w-full rounded-md bg-gradient-to-r from-light-violet to-light-magenta">
+                <div className="flex items-center">
+                  <IoIosArrowBack className="text-white text-md" />
+                  <Image
+                    src={"/images/avatar.jpg"}
+                    alt="profile"
+                    width={40}
+                    height={40}
+                    className="rounded-full ml-1 mr-2 border-2 border-white"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-[500]">
+                      Samuel Green
+                    </span>
+                    <span className="text-white text-[10px]">
+                      Available to Walk
+                    </span>
+                  </div>
+                </div>
+                <SlOptionsVertical className="text-white text-sm" />
+              </div>
+
+              <div className="flex flex-col w-full h-full px-2 pb-2 pt-3 gap-3">
+                <div className="message-box-walker">
+                  That sounds great, I'd be happy with that.
+                </div>
+                <div className="message-box-walker">
+                  Could you send over some pictures of your dog, please?
+                </div>
+                <div className="flex self-end gap-2">
+                  <Image
+                    src={"/images/dog-image-1.jpg"}
+                    alt="image"
+                    width={48}
+                    height={48}
+                    className="rounded-xl"
+                  />
+                  <Image
+                    src={"/images/dog-image-2.jpg"}
+                    alt="image"
+                    width={48}
+                    height={48}
+                    className="rounded-xl"
+                  />
+                  <Image
+                    src={"/images/dog-image-3.jpg"}
+                    alt="image"
+                    width={48}
+                    height={48}
+                    className="rounded-xl"
+                  />
+                </div>
+
+                <div className="message-box-me">
+                  Here are some pictures. She's a happy girl!
+                </div>
+                <div className="message-box-me">Can you make it?</div>
+
+                <div className="message-box-walker">
+                  She looks so happy! The time we discussed works. How long you
+                  shall I take her out for?
+                </div>
+
+                <div className="message-box-input">
+                  <div className="flex">
+                    <span></span>
+                    <p>30 minute walk</p>
+                  </div>
+                  <h6>$29</h6>
+                </div>
+                <div className="message-box-input">
+                  <div className="flex">
+                    <span></span>
+                    <p>1 hour walk</p>
+                  </div>
+                  <h6>$49</h6>
+                </div>
+
+                <div className="flex justify-between items-center mt-auto rounded-full p-1 bg-white">
+                  <span className="text-[10px] ml-2 text-grayish-blue">
+                    Type a message...
+                  </span>
+                  <div className="p-1 bg-black rounded-full">
+                    <IoIosArrowForward className="text-white text-[18px]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="flex flex-col lg:w-1/2 justify-center lg:justify-start gap-4">
+          <h1 className="font-[700] text-[40px]">Simple Booking</h1>
+          <p className="text-[16px] font-normal text-dark-grayish-violet">
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and makes bookings. Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

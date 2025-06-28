@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary */
+  --color-pale-violet: hsl(276, 100%, 81%);
+  --color-moderate-violet: hsl(276, 55%, 52%);
+  --color-desaturated-dark-violet: hsl(271, 15%, 43%);
+  --color-grayish-blue: hsl(206, 6%, 79%);
+  --color-very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  --color-dark-grayish-violet: hsl(270, 7%, 64%);
+
+  /* Gradients */
+  --color-light-magenta: hsl(293, 100%, 63%);
+  --color-light-violet: hsl(264, 100%, 61%);
+
+  /* Secondary */
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-grayish-violet: hsl(270, 20%, 96%);
+  --color-very-light-magenta: hsl(289, 100%, 72%);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +29,64 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-light-grayish-violet);
 }
+
+.message-box-walker {
+  max-width: 60%;
+  width: fit-content;
+  border-radius: 15px 15px 15px 5px;
+  background: hsla(206, 6%, 79%, 0.3);
+  color: var(--color-moderate-violet);
+  font-size: 10px;
+  padding: 8px;
+  line-height: 12px;
+}
+
+.message-box-me {
+  max-width: 60%;
+  width: fit-content;
+  align-self: flex-end;
+  border-radius: 15px 15px 5px 15px;
+  background: white;
+  color: var(--color-desaturated-dark-violet);
+  font-size: 10px;
+  padding: 8px ;
+  box-shadow: var(--color-light-grayish-violet) 0px 5px 5px 2px;
+  line-height: 12px;
+}
+
+.message-box-input {
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  width: 100%;
+  border-radius: 15px 15px 15px 5px;
+  background: linear-gradient(45deg, var(--color-light-magenta), var(--color-light-violet));
+  color: var(--color-moderate-violet);
+  font-size: 16px;
+  padding: 8px;
+  align-items: center;
+}
+
+.message-box-input h6 {
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  padding-right: 8px;
+}
+
+.message-box-input div span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+}
+
+.message-box-input p {
+  font-size: 10px;
+  color: var(--color-white);
+  margin-left: 8px;
+}
+
+
