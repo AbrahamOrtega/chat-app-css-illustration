@@ -8,5 +8,9 @@ const rubik = Rubik({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <main className={rubik.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
